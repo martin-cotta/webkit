@@ -56,15 +56,23 @@
 		5B44A96921BDD69500CA38D9 /* WebApp */ = {
 			isa = PBXGroup;
 			children = (
+				5B47E8BC21C6F410005F099C /* Extensions */,
 				5B44A97621BDD69600CA38D9 /* Info.plist */,
 				5B44A97121BDD69600CA38D9 /* Assets.xcassets */,
 				5B44A96A21BDD69500CA38D9 /* AppDelegate.swift */,
 				5B44A96C21BDD69500CA38D9 /* ViewController.swift */,
-				5B44A97E21BDF56800CA38D9 /* String+truncated.swift */,
-				5B44A97C21BDEA6300CA38D9 /* WKWebView+load.swift */,
 				5B44A97321BDD69600CA38D9 /* LaunchScreen.storyboard */,
 			);
 			path = WebApp;
+			sourceTree = "<group>";
+		};
+		5B47E8BC21C6F410005F099C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5B44A97E21BDF56800CA38D9 /* String+truncated.swift */,
+				5B44A97C21BDEA6300CA38D9 /* WKWebView+load.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
