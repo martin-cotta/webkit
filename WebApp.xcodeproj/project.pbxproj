@@ -13,6 +13,8 @@
 		5B44A97521BDD69600CA38D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B44A97321BDD69600CA38D9 /* LaunchScreen.storyboard */; };
 		5B44A97D21BDEA6300CA38D9 /* WKWebView+load.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44A97C21BDEA6300CA38D9 /* WKWebView+load.swift */; };
 		5B44A97F21BDF56800CA38D9 /* String+truncated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44A97E21BDF56800CA38D9 /* String+truncated.swift */; };
+		5B47E8BE21C6F4A6005F099C /* ViewController+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B47E8BD21C6F4A6005F099C /* ViewController+WKUIDelegate.swift */; };
+		5B47E8C021C6F509005F099C /* ViewController+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B47E8BF21C6F509005F099C /* ViewController+WKNavigationDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		5B44A97621BDD69600CA38D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B44A97C21BDEA6300CA38D9 /* WKWebView+load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+load.swift"; sourceTree = "<group>"; };
 		5B44A97E21BDF56800CA38D9 /* String+truncated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+truncated.swift"; sourceTree = "<group>"; };
+		5B47E8BD21C6F4A6005F099C /* ViewController+WKUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+WKUIDelegate.swift"; sourceTree = "<group>"; };
+		5B47E8BF21C6F509005F099C /* ViewController+WKNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+WKNavigationDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				5B44A96A21BDD69500CA38D9 /* AppDelegate.swift */,
 				5B44A96C21BDD69500CA38D9 /* ViewController.swift */,
 				5B44A97321BDD69600CA38D9 /* LaunchScreen.storyboard */,
+				5B47E8BD21C6F4A6005F099C /* ViewController+WKUIDelegate.swift */,
+				5B47E8BF21C6F509005F099C /* ViewController+WKNavigationDelegate.swift */,
 			);
 			path = WebApp;
 			sourceTree = "<group>";
@@ -145,8 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B47E8BE21C6F4A6005F099C /* ViewController+WKUIDelegate.swift in Sources */,
 				5B44A97D21BDEA6300CA38D9 /* WKWebView+load.swift in Sources */,
 				5B44A97F21BDF56800CA38D9 /* String+truncated.swift in Sources */,
+				5B47E8C021C6F509005F099C /* ViewController+WKNavigationDelegate.swift in Sources */,
 				5B44A96D21BDD69500CA38D9 /* ViewController.swift in Sources */,
 				5B44A96B21BDD69500CA38D9 /* AppDelegate.swift in Sources */,
 			);

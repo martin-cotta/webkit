@@ -7,7 +7,7 @@ class ViewController: UIViewController {
     private let url: URL
     private lazy var webView: WKWebView = createWebView()
     private var observers = [NSKeyValueObservation]()
-    private var progressView = UIProgressView(progressViewStyle: .bar)
+    var progressView = UIProgressView(progressViewStyle: .bar)
 
     // MARK: - initializer
 
@@ -91,71 +91,5 @@ class ViewController: UIViewController {
                 progressView.heightAnchor.constraint(equalToConstant: 1),
             ])
         }
-    }
-}
-
-extension ViewController: WKNavigationDelegate {
-    func webView(_: WKWebView, didFinish _: WKNavigation!) {
-        // reset the progress view value after each request
-        progressView.setProgress(0.0, animated: false)
-    }
-
-    func webView(_ webView: WKWebView,
-                 decidePolicyFor navigationAction: WKNavigationAction,
-                 decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        guard let url = navigationAction.request.url else {
-            decisionHandler(.cancel)
-            return
-        }
-
-        print("webView decidePolicyFor: ", url.absoluteString.truncated())
-
-        if navigationAction.navigationType == .linkActivated {
-            // use external browser for external urls
-            if url.host != defaultUrl.host {
-                UIApplication.shared.open(url, options: [:])
-                decisionHandler(.cancel)
-                return
-            }
-
-            // JS window open or target="_blank" tag
-            if navigationAction.targetFrame == nil ||
-                !(navigationAction.targetFrame?.isMainFrame ?? false) {
-                // 1. open url in Safari
-                UIApplication.shared.open(url, options: [:])
-
-                // 2. or load url in current webView
-                // webView.load(navigationAction.request)
-
-                // 3. or make new WKWebView and open the url
-                // let vc = ViewController(url: url)
-                // navigationController?.pushViewController(vc, animated: true)
-
-                decisionHandler(.cancel)
-                return
-            }
-        }
-
-        decisionHandler(.allow)
-    }
-}
-
-extension ViewController: WKUIDelegate {
-    func webView(_: WKWebView,
-                 createWebViewWith _: WKWebViewConfiguration,
-                 for navigationAction: WKNavigationAction,
-                 windowFeatures _: WKWindowFeatures) -> WKWebView? {
-        // JS window open or target="_blank" tag
-        // If it's not being handle in decidePolicyFor navigationAction
-        if let url = navigationAction.request.url {
-            if UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.open(url, options: [:]) { result in
-                    // whether the URL was opened successfully
-                    print(result)
-                }
-            }
-        }
-
-        return nil
     }
 }
