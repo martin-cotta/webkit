@@ -1,13 +1,10 @@
 extension String {
-    
-    var truncationLimit: Int {
-        get { return 50 }
-    }
-    
+    var truncationLimit: Int { return 50 }
+
     func truncated() -> String {
-        guard self.count > truncationLimit else {
+        guard count > truncationLimit else {
             return self
         }
-        return "\(self.prefix(truncationLimit)) ..."
+        return "\(prefix(truncationLimit)) ..."
     }
 }
