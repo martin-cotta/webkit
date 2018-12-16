@@ -1,8 +1,7 @@
 import WebKit
 
 extension ViewController: WKNavigationDelegate {
-
-    func webView(_: WKWebView, didFinish _: WKNavigation!) {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         // reset the progress view value after each request
         progressView.setProgress(0.0, animated: false)
     }
